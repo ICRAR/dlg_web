@@ -54,7 +54,13 @@ nav li:nth-of-type(2){
 }
 
 #branding{
-  margin-left: 55px;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+div.branding{
+  display: inline-block;
+  transform: translateY(-8px);
 }
 
 #copyright{
@@ -83,15 +89,14 @@ nav li:hover a {
   text-decoration: underline;
 }
 
-div.logo {
-    background: url("icrar.svg") no-repeat;
-    background-size: contain;
-    position: absolute;
-    width: 59px;
-    height: 57px;
-    top: 16px;
-    left: 20px;
-    z-index: 10;
+a.logo {
+    z-index: 100;
+    display: inline-block;
+}
+
+a.logo img{
+  width: 59px;
+  height:57px;
 }
 
 .text-hide {
