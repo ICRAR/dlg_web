@@ -1,0 +1,808 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.roboto-<uniquifier> {
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "width" 100;
+}
+
+h1,h2,h3,h4,h5,span,button,a{
+  font-family:roboto;
+}
+
+body{
+    background-color: #323641;  
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 2rem;
+  border:none;
+  height:60px;
+  transition: height 1s ease-in-out 4s,padding .2s ease-in-out 4s;
+  overflow:hidden;
+}
+
+nav h2{
+  z-index:100;
+}
+
+nav h2 span {
+  display: block;
+  color: #ffb709;
+  font-weight:300;
+  font-style:italic; 
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin:0px;
+  z-index:100;
+}
+
+nav li {
+  padding-left: 1rem; /* 7! */
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+nav li:first-of-type a{
+  color:#ffb709;
+}
+
+nav li:hover a {
+  text-decoration: underline;
+}
+
+div.logo {
+    background: url("icrar.svg") no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 84px;
+    height: 82px;
+    position: fixed;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    bottom: 0;
+    z-index: 10;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+#solarSystemWrapper{
+  --slowDown:0.95;
+/*  positioning the whole animation  */
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  z-index:20;
+  pointer-events:none;
+}
+
+#solarSystemWrapper .spin{
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper{
+/*   determines the size of the solar system */
+    width: 600px;
+    height:600px;
+/*     setting the angle of the solar system */
+    transform: rotateX(70deg) rotateY(20deg);
+    transform-style: preserve-3d;
+}
+  
+.wrapper .center{
+  transform-style:preserve-3d;
+  margin-top:50%;
+  margin-left:50%;
+  transform:translate(-50%,-50%);
+  position:absolute;
+}
+  
+/* RINGS */
+.wrapper .ring1{
+  transform-style:preserve-3d;
+  width:228px;
+  aspect-ratio:1;
+}
+
+.wrapper .ring2{
+  transform-style:preserve-3d;
+  width:352px;
+  aspect-ratio:1;
+}
+
+.wrapper .ring3{
+  transform-style:preserve-3d;
+  width:500px;
+  aspect-ratio:1;
+}
+.wrapper .ring4{
+  transform-style:preserve-3d;
+  width:620px;
+  aspect-ratio:1;
+}
+
+.wrapper .ring5{
+  transform-style:preserve-3d;
+  width:950px;
+  aspect-ratio:1;
+}
+
+.wrapper .ring6{
+  transform-style:preserve-3d;
+  width:1300px;
+  aspect-ratio:1;
+}
+
+.wrapper .ring7{
+  transform-style:preserve-3d;
+  width:2000px;
+  aspect-ratio:1;
+}
+
+.wrapper .ring8{
+  transform-style:preserve-3d;
+  width:2804px;
+  aspect-ratio:1;
+}
+
+.wrapper .ring{
+  transform-style:preserve-3d;
+  border: 4px solid #3e424c;
+  border-radius:50%;
+  transition-property: animation-duration;
+  transition-duration: 4s;
+  transition: border-color 1s ease-in-out 2s, opacity 1s ease-in-out 2s;
+  opacity:1;
+}
+.wrapper #solarSystemClickTarget .ring{
+  border:none;
+}
+
+.initiate .wrapper .ring{
+  border-color: rgba(0,0,0,0);
+}
+
+/* PLANET OFFSETS */
+/* ofset by half the planet's size to center on ring */
+.ring1 .planet{
+  margin-top: -9px;
+  margin-left: -9px;
+}
+
+.ring2 .planet{
+  margin-top: -13px;
+  margin-left: -13px;
+}
+
+.ring3 .planet{
+  margin-top: -15px;
+  margin-left: -15px;
+}
+
+.ring4 .planet{
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.ring5 .planet{
+  margin-top: -31px;
+  margin-left: -31px;
+}
+
+.ring6 .planet{
+  margin-top: -27px;
+  margin-left: -27px;
+}
+
+.ring7 .planet{
+  margin-top: -18px;
+  margin-left: -18px;
+}
+
+.ring8 .planet{
+  margin-top: -18px;
+  margin-left: -18px;
+}
+
+/* CELESTIAL BODIES   */
+.wrapper .theSun{
+  background-color:#ffb709;
+  background: radial-gradient(circle at 20% 35%, #ffb709 3%, #c99310 60%, #ffb709 100%);
+  border-radius:50%;
+  width:120px;
+  height:120px;
+  /*     resetting the suns rotation to be flat */
+  transform: translate(-50%,-50%) rotateX(-70deg) rotateY(-20deg);
+  transition: opacity 0.1s linear 1.5s;
+}
+
+.wrapper .planet{
+  border-radius:50%;
+  transform-style:preserve-3d;
+  position:absolute;
+  top:50%;
+  transition-property: animation-duration;
+  transition-duration: 4s;
+  opacity:1;
+  z-index:21;
+}
+
+.wrapper .planet div{
+  transition: background-color 1s ease-in-out 2s;
+}
+
+.wrapper .planet6 div:nth-of-type(1){
+  transform-style:preserve-3d;
+  width:59px;
+  height:59px;
+  border:solid 1px #e3c7a8;
+  top:50%;
+  left:50%;
+  position:absolute;
+  border-radius: 50%;
+  transform:translate(-50%,-50%) rotateX(85deg) rotateY(2deg);
+}
+
+.wrapper .planet6 div:nth-of-type(2){
+  transform-style:preserve-3d;
+  width:63px;
+  height:63px;
+  border:solid 4px #e3c7a8;
+  top:50%;
+  left:50%;
+  transform: ; 
+  position:absolute;
+  border-radius: 50%;
+  transform:translate(-50%,-50%) rotateX(85deg) rotateY(2deg);
+}
+
+.wrapper .planet6 div:nth-of-type(3){
+  transform-style:preserve-3d;
+  width:75px;
+  height:75px;
+  border:solid 2px #e3c7a8;
+  top:50%;
+  left:50%;
+  transform: ; 
+  position:absolute;
+  border-radius: 50%;
+  transform:translate(-50%,-50%) rotateX(85deg) rotateY(2deg);
+}
+
+.wrapper .planet7 div{
+  transform-style:preserve-3d;
+  width:40px;
+  height:40px;
+  border:solid 1px #68cdf0;
+  top:50%;
+  left:50%;
+  transform: ; 
+  position:absolute;
+  border-radius: 50%;
+  transform:translate(-50%,-50%) rotateX(90deg) rotateY(10deg);
+  transition: border-color 1s ease-in-out 2s;
+}
+
+.rotate1{
+  animation: clockwiseRotation linear infinite 8s;
+  transform:rotateZ(45deg);
+  animation-composition: add;
+  transform-style:preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .planet1{
+/*   transform-style:preserve-3d; */
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  transform: rotateX(90deg) rotateY(-45deg);
+  background-color:#c49c70;
+}
+
+.rotate2{
+  animation: clockwiseRotation linear infinite 22s;
+  animation-composition: add;
+  transform-style:preserve-3d;
+  transform:rotateZ(130deg);
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .planet2{
+  transform-style:preserve-3d;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  transform: rotateX(90deg) rotateY(-130deg); 
+  background-color:#d5be98;
+/*   background-color:#9b9b9b; */
+}
+
+.rotate3{
+  animation: clockwiseRotation linear infinite 36s;
+  animation-composition: add;
+  transform:rotateZ(165deg);
+  transform-style:preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .planet3{
+  transform-style:preserve-3d;
+  width:24px;
+  height:24px;
+  transform: rotateX(90deg) rotateY(-165deg); 
+  background-color:#77cbe2;
+  border-radius:50%;
+}
+
+.rotate4{
+  animation: clockwiseRotation linear infinite 68s;
+  animation-composition: add;
+  transform:rotateZ(335.5deg);
+  transform-style:preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .planet4{
+  transform-style:preserve-3d;
+  width:14px;
+  height:14px;
+  transform: rotateX(90deg) rotateY(-343deg); 
+  background-color:#e68d61;
+  border-radius:50%;
+}
+
+.rotate5{
+  animation: clockwiseRotation linear infinite 433s;
+  animation-composition: add;
+  transform:rotateZ(125deg);
+  transform-style:preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .planet5{
+  transform-style:preserve-3d;
+  width:55px;
+  height:55px;
+  transform: rotateX(90deg) rotateY(-125deg); 
+  background-color:#e4bd95;
+  border-radius:50%;
+}
+
+.rotate6{
+  animation: clockwiseRotation linear infinite 1075s;
+  animation-composition: add;
+  transform:rotateZ(135deg);
+  transform-style:preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .planet6{
+  transform-style:preserve-3d;
+  width:48px;
+  height:48px;
+  transform: rotateX(90deg) rotateY(-135deg); 
+  background-color:#e3c7a8;
+  border-radius:50%;
+}
+
+.rotate7{
+  animation: clockwiseRotation linear infinite 3068s;
+  animation-composition: add;
+  transform:rotateZ(60deg);
+  transform-style:preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .planet7{
+  transform-style:preserve-3d;
+  width:30px;
+  height:30px;
+  transform: rotateX(90deg) rotateY(-60deg); 
+  background-color:#68cdf0;
+  border-radius:50%;
+}
+
+.rotate8{
+  animation: clockwiseRotation linear infinite 6019s;
+  animation-composition: add;
+  transform:rotateZ(295deg);
+  transform-style:preserve-3d;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .planet8{
+  transform-style:preserve-3d;
+  width:30px;
+  height:30px;
+  transform: rotateX(90deg) rotateY(-295deg); 
+  background-color:#75b8e3;
+  border-radius:50%;
+}
+
+.counterRotate1{
+  animation: counterRotation linear infinite 8s;
+  animation-composition: add;
+}
+
+.counterRotate2{
+  animation: counterRotation linear infinite 22s;
+  animation-composition: add;
+}
+
+.counterRotate3{
+  animation: counterRotation linear infinite 36s;
+  animation-composition: add;
+}
+
+.counterRotate4{
+  animation: counterRotation linear infinite 68s;
+  animation-composition: add;
+}
+
+.counterRotate5{
+  animation: counterRotation linear infinite 433s;
+  animation-composition: add;
+}
+
+.counterRotate6{
+  animation: counterRotation linear infinite 1075s;
+  animation-composition: add;
+}
+
+.counterRotate7{
+  animation: counterRotation linear infinite 3068s;
+  animation-composition: add;
+}
+
+.counterRotate8{
+  animation: counterRotation linear infinite 6019s;
+  animation-composition: add;
+}
+
+@keyframes clockwiseRotation {
+  to { 
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes counterRotation {
+  to { 
+    transform: rotate(-1turn);
+  }
+}
+
+.stopAnimation .rotate,.stopAnimation .planet{
+  animation-play-state:paused;
+}
+
+button{
+  font-size:30px;
+  z-index: 1000;
+  position:relative;
+}
+
+h1{
+  position:absolute;
+  left:50%;
+  top: 50%;
+  transform:translate(-50%,-50%);
+  margin:-20px 0px 0px -270px;
+  font-size:90px;
+  font-family:roboto;
+  font-weight:400;
+  color:white;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  pointer-events:none;
+}
+
+h5{
+  position:absolute;
+  left:50%;
+  top: 50%;
+  transform:translate(-50%,-50%);
+  margin: 30px -20px 0px -268px;
+  font-size:20px;
+  font-family:roboto;
+  font-weight:400;
+  color:white;
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+  opacity: 0;
+  pointer-events:none;
+}
+
+.page{
+  position: absolute;
+  inset: 0px 0px 0px 0px;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.divider{
+  background-color:white;
+  transform:translate(-50%, -50%);
+  left:50%;
+  top:50%;
+  z-index:30;
+  position:absolute;
+  height:120px;
+  width:120px;
+  border-radius:50%;
+  opacity:0;
+  transition: height 0.5s ease-in-out, width 0.5s ease-in-out 0.4s, opacity 1s ease-in-out 1.5s;
+  pointer-events:none;
+}
+
+.theLine{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  margin-left:256px;
+  margin-top:27px;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  pointer-events:none;
+}
+
+.theLine polyline{
+  fill: none;
+  stroke:white;
+  stroke-width:3px;
+}
+
+
+/* click target solar system */
+#solarSystemClickTarget{
+/*  positioning the whole animation  */
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  z-index:1;
+  opacity:1;
+  transition:opacity 1s ease-in-out 3.5s;
+  pointer-events:all;
+}
+
+#solarSystemClickTarget .ring1{
+  transform:translate3d(0px,0px,1.6px)
+}
+
+#solarSystemClickTarget .ring2{
+  transform:translate3d(0px,0px,1.4px)
+}
+
+#solarSystemClickTarget .ring3{
+  transform:translate3d(0px,0px,1.2px)
+}
+
+#solarSystemClickTarget .ring4{
+  transform:translate3d(0px,0px,1px)
+}
+
+#solarSystemClickTarget .ring5{
+  transform:translate3d(0px,0px,0.8px)
+}
+
+#solarSystemClickTarget .ring6{
+  transform:translate3d(0px,0px,0.6px)
+}
+
+#solarSystemClickTarget .ring7{
+  transform:translate3d(0px,0px,0.4px)
+}
+
+#solarSystemClickTarget .ring8{
+  transform:translate3d(0px,0px,0.2px)
+}
+
+.clickRing {
+  background-color:#323641;
+}
+
+.clickRing:hover {
+  background-color:#4f5567;
+}
+
+.contentUi{
+  position:absolute;
+  width:500px;
+  height:auto;
+  right:10%;
+  top:80px;
+  opacity:0;
+  z-index:100;
+  pointer-events:none;
+}
+
+.contentUi .underline{
+  width:100%;
+  height:2px;
+  background-color:white;
+}
+
+.contentUi .text{
+  background-color:rgba(1,1,1,0.4);
+  padding: 1px 15px 15px 15px;
+  border-radius:20px;
+  margin-top:20px;
+  z-index: 100;
+}
+
+.contentWrapper{
+  opacity:1;
+  transition: opacity 0.5s ease-in-out 3.5s;
+}
+
+span{
+  color: white;
+  margin-top: 0px;
+  font-size:17px;
+}
+
+h2{
+  color:white;
+  font-size:25px;
+  margin:0px;
+}
+
+h3{
+  color:white;
+  text-decoration:underline;
+  font-size:20px;
+  margin: 15px 0px 7px 0px
+}
+
+.showContent{
+  opacity:1;
+  pointer-events:click;
+}
+
+.pointerLine{
+  position:relative;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  transition: opacity 0.5s ease-in-out 3.5s;
+  z-index:20;
+}
+
+.pointerLine svg{
+  width:100%;
+  height:100%;
+}
+
+.pointerLine polyline{
+  stroke:white;
+  stroke-width:2px;
+  fill:none;
+}
+
+.scale{
+  position:absolute;
+  width:100%;
+  height:100%;
+  transition: transform 2s ease-in-out 2.5s;
+}
+
+.scale.resizeAnim{
+  transition: transform 1s ease-in-out 1s;
+}
+
+/* Initiate animation */
+.initiate nav{
+  height:0px;
+  padding:0px;
+  overflow:hidden;
+}
+
+.initiate .scale{
+  transform:unset;
+}
+
+.initiate #solarSystemClickTarget{
+  opacity:0;
+}
+
+.initiate .theSun{
+  opacity:0;
+  pointer-events:none;
+}
+
+.initiate .planet1, .initiate .planet7, .initiate .planet8,.initiate .planet7 div{
+  background-color:rgba(0,0,0,0);
+  border-color:rgba(0,0,0,0);
+}
+
+.initiate .ring2,.initiate .ring3, .initiate .ring4, .initiate .ring5, .initiate .ring6{
+  border:none;
+}
+
+.initiate .divider{
+  width:2px;
+  height:200px;
+  opacity:1;
+  border-radius:0%;
+}
+
+.initiate .contentWrapper{
+  opacity: 0;
+}
+
+.initiate .pointerLine{
+  opacity: 0;
+}
+
+.initiate .theLine,.initiate h1, .initiate h5{
+  opacity: 1; 
+}
+
+.ready .theSun{
+  pointer-events:all;
+}
+
+.getStartedText{
+  visibility:hidden;
+}
+
+.test .getStartedText{
+  visibility:visible;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
+}
+
+.getStartedText a{
+  color: black;
+  text-decoration:none;
+}
+
+.testing{
+  transform:scale(1);
+  transition: transform ease-out 0.2s;
+  width:100%;
+  height:100%;
+}
+
+.test{
+  transform:scale(5) !important;
+}
+
+.test #solarSystemClickTarget, .test .pointerLine{
+/*   display:none; */
+  pointer-events:none;
+}
