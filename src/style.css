@@ -49,6 +49,10 @@ nav li {
   position: relative;
 }
 
+nav li:nth-of-type(2){
+  padding-right: 5px;
+}
+
 #branding{
   margin-left: 55px;
 }
@@ -818,4 +822,19 @@ h3{
 .test #solarSystemClickTarget, .test .pointerLine{
 /*   display:none; */
   pointer-events:none;
+}
+
+.flashing {
+  animation-duration: 800ms;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  from {
+     background-color: #323641;
+  }
+  to {
+     background-color: #4f5567;
+  }
 }

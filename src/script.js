@@ -93,6 +93,7 @@ $('#solarSystemClickTarget .ring1').on('mouseenter',function(){
   $('.mercury').addClass('showContent')
   drawingPointerLine = true;
   drawingPointerLineTarget = 'planet1'
+  $('.ring.flashing').removeClass('flashing')
   drawPointerLine();
 })
 
@@ -107,6 +108,7 @@ $('#solarSystemClickTarget .ring2').on('mouseenter',function(){
   $('.venus').addClass('showContent')
   drawingPointerLine = true;
   drawingPointerLineTarget = 'planet2'
+  $('.ring.flashing').removeClass('flashing')
   drawPointerLine();
 })
 
@@ -121,6 +123,7 @@ $('#solarSystemClickTarget .ring3').on('mouseenter',function(){
   $('.earth').addClass('showContent')
   drawingPointerLine = true;
   drawingPointerLineTarget = 'planet3'
+  $('.ring.flashing').removeClass('flashing')
   drawPointerLine();
 })
 
@@ -135,6 +138,7 @@ $('#solarSystemClickTarget .ring4').on('mouseenter',function(){
   $('.mars').addClass('showContent')
   drawingPointerLine = true;
   drawingPointerLineTarget = 'planet4'
+  $('.ring.flashing').removeClass('flashing')
   drawPointerLine();
 })
 
@@ -149,6 +153,7 @@ $('#solarSystemClickTarget .ring5').on('mouseenter',function(){
   $('.jupiter').addClass('showContent')
   drawingPointerLine = true;
   drawingPointerLineTarget = 'planet5'
+  $('.ring.flashing').removeClass('flashing')
   drawPointerLine();
 })
 
@@ -163,6 +168,7 @@ $('#solarSystemClickTarget .ring6').on('mouseenter',function(){
   $('.saturn').addClass('showContent')
   drawingPointerLine = true;
   drawingPointerLineTarget = 'planet6'
+  $('.ring.flashing').removeClass('flashing')
   drawPointerLine();
 })
 
@@ -177,6 +183,7 @@ $('#solarSystemClickTarget .ring7').on('mouseenter',function(){
   $('.uranus').addClass('showContent')
   drawingPointerLine = true;
   drawingPointerLineTarget = 'planet7'
+  $('.ring.flashing').removeClass('flashing')
   drawPointerLine();
 })
 
@@ -191,6 +198,7 @@ $('#solarSystemClickTarget .ring8').on('mouseenter',function(){
   $('.neptune').addClass('showContent')
   drawingPointerLine = true;
   drawingPointerLineTarget = 'planet8'
+  $('.ring.flashing').removeClass('flashing')
   drawPointerLine();
 })
 
