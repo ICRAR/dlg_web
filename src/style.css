@@ -53,6 +53,13 @@ nav li {
   margin-left: 55px;
 }
 
+#copyright{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #b3b3b3;
+}
+
 h2 sup, a sup{
   position: absolute;
   top: -5px;
@@ -805,7 +812,7 @@ h3{
 }
 
 .test{
-  transform:scale(5) !important;
+  /* transform:scale(5) !important; */
 }
 
 .test #solarSystemClickTarget, .test .pointerLine{
