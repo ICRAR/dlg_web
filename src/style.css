@@ -46,6 +46,16 @@ nav ul {
 
 nav li {
   padding-left: 1rem; /* 7! */
+  position: relative;
+}
+
+#branding{
+  margin-left: 55px;
+}
+
+h2 sup, a sup{
+  position: absolute;
+  top: -5px;
 }
 
 nav a {
@@ -65,13 +75,11 @@ nav li:hover a {
 div.logo {
     background: url("icrar.svg") no-repeat;
     background-size: contain;
-    display: inline-block;
-    width: 84px;
-    height: 82px;
-    position: fixed;
-    margin-bottom: 30px;
-    margin-left: 30px;
-    bottom: 0;
+    position: absolute;
+    width: 59px;
+    height: 57px;
+    top: 16px;
+    left: 20px;
     z-index: 10;
 }
 
@@ -271,7 +279,6 @@ div.logo {
   border:solid 4px #e3c7a8;
   top:50%;
   left:50%;
-  transform: ; 
   position:absolute;
   border-radius: 50%;
   transform:translate(-50%,-50%) rotateX(85deg) rotateY(2deg);
@@ -284,7 +291,6 @@ div.logo {
   border:solid 2px #e3c7a8;
   top:50%;
   left:50%;
-  transform: ; 
   position:absolute;
   border-radius: 50%;
   transform:translate(-50%,-50%) rotateX(85deg) rotateY(2deg);
@@ -297,7 +303,6 @@ div.logo {
   border:solid 1px #68cdf0;
   top:50%;
   left:50%;
-  transform: ; 
   position:absolute;
   border-radius: 50%;
   transform:translate(-50%,-50%) rotateX(90deg) rotateY(10deg);
@@ -676,6 +681,7 @@ h2{
   color:white;
   font-size:25px;
   margin:0px;
+  position: relative;
 }
 
 h3{
