@@ -1,6 +1,8 @@
-# daliuge splash ui
+# DALiuGE Homepage
 
-A Pen created on CodePen.
+Code used to produce the DALiuGE-EAGLE homepage, currently hosted at daliuge.icrar.org. 
 
-Original URL: [https://codepen.io/ikebothun/pen/vEBPdKb](https://codepen.io/ikebothun/pen/vEBPdKb).
+# Note
+This was originally created on [CodePen]](https://codepen.io/ikebothun/pen/vEBPdKb).
+
 
