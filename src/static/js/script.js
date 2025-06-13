@@ -46,17 +46,18 @@ function animate(){
 function scaleGalaxyToScreen(){
   const galaxyWidth = 2900
   const galaxyHeight = 1500
+  const navbarHeight = 92
   const windowWidth = window.innerWidth
-  const windowHeight = window.innerHeight
+  const windowHeight = window.innerHeight - navbarHeight
   
   const widthRatio = windowWidth/galaxyWidth
   const heightRatio = windowHeight/galaxyHeight
   
   if(widthRatio>heightRatio){
-    $('.scale').css('transform', 'scale(' + heightRatio + ')');
+    $('.scale').css('transform', 'scale(' + heightRatio + ') translateY( '+ navbarHeight +'px)');
     galaxyScale=heightRatio;
   }else{
-    $('.scale').css('transform', 'scale(' + widthRatio + ')');
+    $('.scale').css('transform', 'scale(' + widthRatio + ') translateY( '+ navbarHeight +'px)');
     galaxyScale=widthRatio;
   }
 }
